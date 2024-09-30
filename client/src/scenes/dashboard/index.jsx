@@ -1,3 +1,4 @@
+// Dashboard.jsx
 import React from "react";
 import FlexBetween from "components/FlexBetween";
 import Header from "components/Header";
@@ -20,12 +21,16 @@ import BreakdownChart from "components/BreakdownChart";
 import OverviewChart from "components/OverviewChart";
 import { useGetDashboardQuery } from "state/api";
 import StatBox from "components/StatBox";
-
+import { usePasskey } from "scenes/PasskeyContext"; // Import the context
 const Dashboard = () => {
   const theme = useTheme();
   const isNonMediumScreens = useMediaQuery("(min-width: 1200px)");
   const { data, isLoading } = useGetDashboardQuery();
-
+  const { isPasskeyEntered } = usePasskey(); // Get passkey state
+  if (!isPasskeyEntered) {
+    window.location.href = "/"; // Redirect to your landing page URL
+    return null; // Prevent rendering the dashboard
+  }
   const columns = [
     {
       field: "_id",
@@ -56,7 +61,6 @@ const Dashboard = () => {
       renderCell: (params) => `$${Number(params.value).toFixed(2)}`,
     },
   ];
-
   return (
     <Box m="1.5rem 2.5rem">
       <FlexBetween>
@@ -64,7 +68,6 @@ const Dashboard = () => {
           title="DASHBOARD"
           subtitle="Welcome to SPAMASHOP - Admin Dashboard"
         />
-
         <Box>
           <Button
             sx={{
@@ -80,7 +83,6 @@ const Dashboard = () => {
           </Button>
         </Box>
       </FlexBetween>
-
       <Box
         mt="20px"
         display="grid"
@@ -91,7 +93,6 @@ const Dashboard = () => {
           "& > div": { gridColumn: isNonMediumScreens ? undefined : "span 12" },
         }}
       >
-        {/* ROW 1 */}
         <StatBox
           title="Total Customers"
           value={data && data.totalCustomers}
@@ -145,8 +146,6 @@ const Dashboard = () => {
             />
           }
         />
-
-        {/* ROW 2 */}
         <Box
           gridColumn="span 8"
           gridRow="span 3"
@@ -199,13 +198,11 @@ const Dashboard = () => {
             fontSize="0.8rem"
             sx={{ color: theme.palette.secondary[200] }}
           >
-            Breakdown of real states and information via category for revenue
-            made for this year and total sales.
+            Breakdown of real states and information via category for revenue made for this year and total sales.
           </Typography>
         </Box>
       </Box>
     </Box>
   );
 };
-
 export default Dashboard;

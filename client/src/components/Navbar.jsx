@@ -23,15 +23,25 @@ import {
   MenuItem,
   useTheme,
 } from "@mui/material";
+import { useNavigate } from "react-router-dom"; // Add this for navigation
 
 const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
   const dispatch = useDispatch();
   const theme = useTheme();
+  const navigate = useNavigate(); // Initialize navigation
 
   const [anchorEl, setAnchorEl] = useState(null);
   const isOpen = Boolean(anchorEl);
   const handleClick = (event) => setAnchorEl(event.currentTarget);
   const handleClose = () => setAnchorEl(null);
+
+  const handleLogout = () => {
+    // Close the menu
+    handleClose();
+
+    // Redirect to the Landing Page (where the passkey modal is)
+    navigate("/");
+  };
 
   return (
     <AppBar
@@ -118,7 +128,7 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
               onClose={handleClose}
               anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
             >
-              <MenuItem onClick={handleClose}>Log Out</MenuItem>
+              <MenuItem onClick={handleLogout}>Log Out</MenuItem> {/* Trigger logout */}
             </Menu>
           </FlexBetween>
         </FlexBetween>
