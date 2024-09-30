@@ -2,7 +2,13 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 import { useMemo } from "react";
 import { useSelector } from "react-redux";
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import {
+  HashRouter,
+  BrowserRouter,
+  Navigate,
+  Route,
+  Routes,
+} from "react-router-dom";
 import { themeSettings } from "theme";
 import Layout from "scenes/layout";
 import Dashboard from "scenes/dashboard";
@@ -22,6 +28,7 @@ function App() {
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
   return (
     <div className="app">
+      {/* Fan note: we need to change this to "HashRouter" for it if refreshed, it WONT CRASH*/}
       <BrowserRouter>
         <ThemeProvider theme={theme}>
           <CssBaseline />
@@ -42,6 +49,7 @@ function App() {
             </Route>
           </Routes>
         </ThemeProvider>
+        {/* Fan note: we need to change this to "HashRouter" for it if refreshed, it WONT CRASH*/}
       </BrowserRouter>
     </div>
   );
