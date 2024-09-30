@@ -11,8 +11,6 @@ import {
   Routes,
 } from "react-router-dom";
 
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-
 import { themeSettings } from "theme";
 import Layout from "scenes/layout";
 import Dashboard from "scenes/dashboard";
