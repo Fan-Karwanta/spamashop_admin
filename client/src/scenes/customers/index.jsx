@@ -26,6 +26,18 @@ const Customers = () => {
       flex: 1,
     },
     {
+      field: "createdAt",
+      headerName: "Date Created",
+      flex: 1,
+      valueGetter: (params) => {
+        if (params.value) {
+          return params.value.split("T")[0];
+        }
+        return "";
+      },
+    },
+    /*
+    {
       field: "phoneNumber",
       headerName: "Phone Number",
       flex: 0.5,
@@ -48,6 +60,7 @@ const Customers = () => {
       headerName: "Role",
       flex: 0.5,
     },
+    */
   ];
 
   return (

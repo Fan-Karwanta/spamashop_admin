@@ -19,20 +19,20 @@ const UserSchema = new mongoose.Schema(
       required: true,
       min: 5,
     },
-    city: String,
-    state: String,
-    country: String,
-    occupation: String,
-    phoneNumber: String,
-    transactions: Array,
-    role: {
-      type: String,
-      enum: ["user", "admin", "superadmin"],
-      default: "admin",
-    },
+    //  city: String,
+    //  state: String,
+    //  country: String,
+    //  occupation: String,
+    //  phoneNumber: String,
+    //  transactions: Array,
+    //  role: {
+    //   type: String,
+    //    enum: ["user", "admin", "superadmin"],
+    //    default: "admin",
+    //  },
   },
   { timestamps: true }
 );
 
-const User = mongoose.model("User", UserSchema);
+const User = mongoose.model("Customer", UserSchema, "customers");
 export default User;

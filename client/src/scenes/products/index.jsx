@@ -21,8 +21,10 @@ const Product = ({
   price,
   rating,
   category,
-  supply,
+  stock,
   stat,
+  brand,
+  shopName,
 }) => {
   const theme = useTheme();
   const [isExpanded, setIsExpanded] = useState(false);
@@ -47,7 +49,7 @@ const Product = ({
           {name}
         </Typography>
         <Typography sx={{ mb: "1.5rem" }} color={theme.palette.secondary[400]}>
-          ${Number(price).toFixed(2)}
+          ₱{Number(price).toFixed(2)}
         </Typography>
         <Rating value={rating} readOnly />
 
@@ -72,13 +74,15 @@ const Product = ({
       >
         <CardContent>
           <Typography>id: {_id}</Typography>
-          <Typography>Supply Left: {supply}</Typography>
-          <Typography>
+          <Typography>Stock Left: {stock}</Typography>
+          <Typography>Brand : {brand}</Typography>
+          <Typography>Shop: {shopName}</Typography>
+          {/*<Typography>
             Yearly Sales This Year: {stat[0].yearlySalesTotal}
           </Typography>
           <Typography>
             Yearly Units Sold This Year: {stat[0].yearlyTotalSoldUnits}
-          </Typography>
+          </Typography> */}
         </CardContent>
       </Collapse>
     </Card>
@@ -115,8 +119,10 @@ const Products = () => {
               price,
               rating,
               category,
-              supply,
+              stock,
               stat,
+              brand,
+              shopName,
             }) => (
               <Product
                 key={_id}
@@ -126,8 +132,10 @@ const Products = () => {
                 price={price}
                 rating={rating}
                 category={category}
-                supply={supply}
+                stock={stock}
                 stat={stat}
+                brand={brand}
+                shopName={shopName}
               />
             )
           )}

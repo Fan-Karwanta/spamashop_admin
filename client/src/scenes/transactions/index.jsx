@@ -29,13 +29,13 @@ const Transactions = () => {
       flex: 1,
     },
     {
-      field: "userId",
-      headerName: "User ID",
+      field: "delivery_status",
+      headerName: "Delivery Status",
       flex: 1,
     },
     {
-      field: "createdAt",
-      headerName: "CreatedAt",
+      field: "date",
+      headerName: "Date & Time ",
       flex: 1,
     },
     {
@@ -46,11 +46,25 @@ const Transactions = () => {
       renderCell: (params) => params.value.length,
     },
     {
-      field: "cost",
+      field: "price",
       headerName: "Cost",
       flex: 1,
-      renderCell: (params) => `$${Number(params.value).toFixed(2)}`,
+      renderCell: (params) => `₱${Number(params.value).toFixed(2)}`,
     },
+    {
+      field: "payment_status",
+      headerName: "Payment Status",
+      flex: 1,
+    },
+    //   {
+    //     field: "shopName",
+    //     headerName: "Shop Name",
+    //     flex: 1,
+    //     renderCell: (params) => {
+    //       const products = params.row.products;
+    //      return products && products.length > 0 ? products[0].shopName : "N/A";
+    //     },
+    //   },
   ];
 
   return (

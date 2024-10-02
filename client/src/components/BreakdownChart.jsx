@@ -129,9 +129,9 @@ const BreakdownChart = ({ isDashboard = false }) => {
             : "translate(-50%, -100%)",
         }}
       >
-        <Typography variant="h6">
+        {/*<Typography variant="h6">
           {!isDashboard && "Total:"} ${data.yearlySalesTotal}
-        </Typography>
+        </Typography> */}
       </Box>
     </Box>
   );

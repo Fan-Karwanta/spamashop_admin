@@ -3,7 +3,11 @@ import mongoose from "mongoose";
 const TransactionSchema = new mongoose.Schema(
   {
     userId: String,
-    cost: String,
+    price: String,
+    payment_status: String,
+    delivery_status: String,
+    date: String,
+    shopName: String,
     products: {
       type: [mongoose.Types.ObjectId],
       of: Number,
@@ -12,5 +16,9 @@ const TransactionSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const Transaction = mongoose.model("Transaction", TransactionSchema);
+const Transaction = mongoose.model(
+  "Transaction",
+  TransactionSchema,
+  "customerorders"
+);
 export default Transaction;

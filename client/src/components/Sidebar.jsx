@@ -54,10 +54,10 @@ const navItems = [
     text: "Transactions",
     icon: <ReceiptLongOutlined />,
   },
-  {
-    text: "Geography",
-    icon: <PublicOutlined />,
-  },
+  // {
+  //  text: "Geography",
+  //   icon: <PublicOutlined />,
+  // },
   {
     text: "Sales",
     icon: null,
@@ -79,6 +79,8 @@ const navItems = [
     icon: <PieChartOutlined />,
   },
   {
+    /*
+  {
     text: "Management",
     icon: null,
   },
@@ -89,6 +91,7 @@ const navItems = [
   {
     text: "Performance",
     icon: <TrendingUpOutlined />,
+  }, */
   },
 ];
 

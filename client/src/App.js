@@ -4,9 +4,9 @@ import { useMemo } from "react";
 import { useSelector } from "react-redux";
 
 import {
-  HashRouter,
+  //HashRouter,
   BrowserRouter,
-  Navigate,
+  //Navigate,
   Route,
   Routes,
 } from "react-router-dom";

@@ -109,13 +109,13 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
                   fontSize="0.85rem"
                   sx={{ color: theme.palette.secondary[100] }}
                 >
-                  {user.name}
+                  System
                 </Typography>
                 <Typography
                   fontSize="0.75rem"
                   sx={{ color: theme.palette.secondary[200] }}
                 >
-                  {user.occupation}
+                  Admin
                 </Typography>
               </Box>
               <ArrowDropDownOutlined
@@ -128,7 +128,8 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
               onClose={handleClose}
               anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
             >
-              <MenuItem onClick={handleLogout}>Log Out</MenuItem> {/* Trigger logout */}
+              <MenuItem onClick={handleLogout}>Log Out</MenuItem>{" "}
+              {/* Trigger logout */}
             </Menu>
           </FlexBetween>
         </FlexBetween>

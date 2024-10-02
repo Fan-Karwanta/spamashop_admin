@@ -34,17 +34,17 @@ const Dashboard = () => {
   const columns = [
     {
       field: "_id",
-      headerName: "ID",
+      headerName: "Order ID",
       flex: 1,
     },
     {
-      field: "userId",
-      headerName: "User ID",
+      field: "delivery_status",
+      headerName: "Delivery Status",
       flex: 1,
     },
     {
-      field: "createdAt",
-      headerName: "CreatedAt",
+      field: "date",
+      headerName: "Date & Time",
       flex: 1,
     },
     {
@@ -55,10 +55,10 @@ const Dashboard = () => {
       renderCell: (params) => params.value.length,
     },
     {
-      field: "cost",
-      headerName: "Cost",
+      field: "price",
+      headerName: "Price",
       flex: 1,
-      renderCell: (params) => `$${Number(params.value).toFixed(2)}`,
+      renderCell: (params) => `₱${Number(params.value).toFixed(2)}`,
     },
   ];
   return (
@@ -69,7 +69,7 @@ const Dashboard = () => {
           subtitle="Welcome to SPAMASHOP - Admin Dashboard"
         />
         <Box>
-          <Button
+          {/*<Button
             sx={{
               backgroundColor: theme.palette.secondary.light,
               color: theme.palette.background.alt,
@@ -80,7 +80,7 @@ const Dashboard = () => {
           >
             <DownloadOutlined sx={{ mr: "10px" }} />
             Download Reports
-          </Button>
+          </Button> */}
         </Box>
       </FlexBetween>
       <Box
@@ -198,7 +198,8 @@ const Dashboard = () => {
             fontSize="0.8rem"
             sx={{ color: theme.palette.secondary[200] }}
           >
-            Breakdown of real states and information via category for revenue made for this year and total sales.
+            Breakdown of real states and information via category for revenue
+            made for this year and total sales.
           </Typography>
         </Box>
       </Box>
