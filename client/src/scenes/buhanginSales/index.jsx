@@ -15,7 +15,7 @@ const Breakdown = () => {
       >
         <iframe
           style={{
-            background: "#21313C",
+            background: "#1a1f45",
             border: "none",
             borderRadius: "2px",
             boxShadow: "0 2px 10px 0 rgba(70, 76, 79, .2)",

@@ -1,36 +1,21 @@
-// Dashboard.jsx
 import React from "react";
-import FlexBetween from "components/FlexBetween";
-import Header from "components/Header";
-import {
-  DownloadOutlined,
-  Email,
-  PointOfSale,
-  PersonAdd,
-  Traffic,
-} from "@mui/icons-material";
-import {
-  Box,
-  Button,
-  Typography,
-  useTheme,
-  useMediaQuery,
-} from "@mui/material";
+import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
-import BreakdownChart from "components/BreakdownChart";
-import OverviewChart from "components/OverviewChart";
 import { useGetDashboardQuery } from "state/api";
-import StatBox from "components/StatBox";
 import { usePasskey } from "scenes/PasskeyContext"; // Import the context
+import Header from "components/Header";
+
 const Dashboard = () => {
   const theme = useTheme();
   const isNonMediumScreens = useMediaQuery("(min-width: 1200px)");
   const { data, isLoading } = useGetDashboardQuery();
   const { isPasskeyEntered } = usePasskey(); // Get passkey state
+
   if (!isPasskeyEntered) {
     window.location.href = "/"; // Redirect to your landing page URL
     return null; // Prevent rendering the dashboard
   }
+
   const columns = [
     {
       field: "_id",
@@ -61,30 +46,30 @@ const Dashboard = () => {
       renderCell: (params) => `₱${Number(params.value).toFixed(2)}`,
     },
   ];
+
   return (
     <Box m="1.5rem 2.5rem">
-      <FlexBetween>
+      <Box width="100%" height="auto" mb="1.5rem">
         <Header
           title="DASHBOARD"
           subtitle="Welcome to SPAMASHOP - Admin Dashboard"
         />
-        <Box>
-          {/*<Button
-            sx={{
-              backgroundColor: theme.palette.secondary.light,
-              color: theme.palette.background.alt,
-              fontSize: "14px",
-              fontWeight: "bold",
-              padding: "10px 20px",
-            }}
-          >
-            <DownloadOutlined sx={{ mr: "10px" }} />
-            Download Reports
-          </Button> */}
-        </Box>
-      </FlexBetween>
+        <br />
+        <iframe
+          style={{
+            background: "#1a1f45",
+            border: "none",
+            borderRadius: "2px",
+            boxShadow: "0 2px 10px 0 rgba(70, 76, 79, .2)",
+            width: "100%",
+            height: "55vh",
+            overflow: "hidden",
+          }}
+          src="https://charts.mongodb.com/charts-project-0-mohwveq/embed/dashboards?id=ec44904d-15c5-49e1-9987-6fdb8ef05054&theme=dark&autoRefresh=true&maxDataAge=60&showTitleAndDesc=false&scalingWidth=fixed&scalingHeight=fixed"
+        />
+      </Box>
+
       <Box
-        mt="20px"
         display="grid"
         gridTemplateColumns="repeat(12, 1fr)"
         gridAutoRows="160px"
@@ -93,61 +78,8 @@ const Dashboard = () => {
           "& > div": { gridColumn: isNonMediumScreens ? undefined : "span 12" },
         }}
       >
-        <StatBox
-          title="Total Customers"
-          value={data && data.totalCustomers}
-          increase="+14%"
-          description="Since last month"
-          icon={
-            <Email
-              sx={{ color: theme.palette.secondary[300], fontSize: "26px" }}
-            />
-          }
-        />
-        <StatBox
-          title="Sales Today"
-          value={data && data.todayStats.totalSales}
-          increase="+21%"
-          description="Since last month"
-          icon={
-            <PointOfSale
-              sx={{ color: theme.palette.secondary[300], fontSize: "26px" }}
-            />
-          }
-        />
         <Box
-          gridColumn="span 8"
-          gridRow="span 2"
-          backgroundColor={theme.palette.background.alt}
-          p="1rem"
-          borderRadius="0.55rem"
-        >
-          <OverviewChart view="sales" isDashboard={true} />
-        </Box>
-        <StatBox
-          title="Monthly Sales"
-          value={data && data.thisMonthStats.totalSales}
-          increase="+5%"
-          description="Since last month"
-          icon={
-            <PersonAdd
-              sx={{ color: theme.palette.secondary[300], fontSize: "26px" }}
-            />
-          }
-        />
-        <StatBox
-          title="Yearly Sales"
-          value={data && data.yearlySalesTotal}
-          increase="+43%"
-          description="Since last month"
-          icon={
-            <Traffic
-              sx={{ color: theme.palette.secondary[300], fontSize: "26px" }}
-            />
-          }
-        />
-        <Box
-          gridColumn="span 8"
+          gridColumn="span 12" // Full width for transactions table
           gridRow="span 3"
           sx={{
             "& .MuiDataGrid-root": {
@@ -182,28 +114,37 @@ const Dashboard = () => {
             columns={columns}
           />
         </Box>
+
         <Box
-          gridColumn="span 4"
+          gridColumn="span 12" // Full width for Sales By Category
           gridRow="span 3"
-          backgroundColor={theme.palette.background.alt}
+          backgroundColor="#1a1f45"
           p="1.5rem"
           borderRadius="0.55rem"
         >
           <Typography variant="h6" sx={{ color: theme.palette.secondary[100] }}>
             Sales By Category
           </Typography>
-          <BreakdownChart isDashboard={true} />
+          <iframe
+            style={{
+              background: "#1a1f45",
+              border: "none",
+              borderRadius: "2px",
+              boxShadow: "0 2px 10px 0 rgba(70, 76, 79, .2)",
+              width: "100%",
+              height: "55vh", // Increased height for a bigger appearance
+            }}
+            src="https://charts.mongodb.com/charts-project-0-mohwveq/embed/charts?id=1d5bf1dd-e262-4480-804a-a462ba557ac5&maxDataAge=60&theme=dark&autoRefresh=true"
+          />
           <Typography
             p="0 0.6rem"
             fontSize="0.8rem"
             sx={{ color: theme.palette.secondary[200] }}
-          >
-            Breakdown of real states and information via category for revenue
-            made for this year and total sales.
-          </Typography>
+          ></Typography>
         </Box>
       </Box>
     </Box>
   );
 };
+
 export default Dashboard;

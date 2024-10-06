@@ -74,11 +74,16 @@ const navItems = [
     text: "Kidalapong",
     icon: <PublicOutlined />,
   },
-  /*
+
   {
     text: "Data Analytics",
     icon: null,
   },
+  {
+    text: "Breakdown",
+    icon: <PieChartOutlined />,
+  },
+  /*
   {
     text: "Overview",
     icon: <PointOfSaleOutlined />,
@@ -90,10 +95,6 @@ const navItems = [
   {
     text: "Monthly",
     icon: <CalendarMonthOutlined />,
-  },
-  {
-    text: "Breakdown",
-    icon: <PieChartOutlined />,
   },
   */
   {
