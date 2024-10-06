@@ -25,6 +25,9 @@ import Breakdown from "scenes/breakdown";
 import Admin from "scenes/admin";
 import Performance from "scenes/performance";
 import LandingPage from "scenes/landingPage"; // Import the new LandingPage component
+import PoblacionSales from "scenes/poblacionSales";
+import BuhanginSales from "scenes/buhanginSales";
+import KidalapongSales from "scenes/kidalapongSales";
 
 function App() {
   const mode = useSelector((state) => state.global.mode);
@@ -46,6 +49,9 @@ function App() {
               <Route path="/customers" element={<Customers />} />
               <Route path="/transactions" element={<Transactions />} />
               <Route path="/geography" element={<Geography />} />
+              <Route path="/poblacion" element={<PoblacionSales />} />
+              <Route path="/buhangin" element={<BuhanginSales />} />
+              <Route path="/kidalapong" element={<KidalapongSales />} />
               <Route path="/overview" element={<Overview />} />
               <Route path="/daily" element={<Daily />} />
               <Route path="/monthly" element={<Monthly />} />

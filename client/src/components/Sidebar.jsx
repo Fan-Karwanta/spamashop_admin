@@ -59,7 +59,24 @@ const navItems = [
   //   icon: <PublicOutlined />,
   // },
   {
-    text: "Sales",
+    text: "Sales by Area",
+    icon: null,
+  },
+  {
+    text: "Poblacion",
+    icon: <PublicOutlined />,
+  },
+  {
+    text: "Buhangin",
+    icon: <PublicOutlined />,
+  },
+  {
+    text: "Kidalapong",
+    icon: <PublicOutlined />,
+  },
+  /*
+  {
+    text: "Data Analytics",
     icon: null,
   },
   {
@@ -78,6 +95,7 @@ const navItems = [
     text: "Breakdown",
     icon: <PieChartOutlined />,
   },
+  */
   {
     /*
   {
