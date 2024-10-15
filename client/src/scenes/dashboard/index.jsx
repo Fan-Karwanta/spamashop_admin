@@ -65,7 +65,7 @@ const Dashboard = () => {
             height: "55vh",
             overflow: "hidden",
           }}
-          src="https://charts.mongodb.com/charts-project-0-mohwveq/embed/dashboards?id=ec44904d-15c5-49e1-9987-6fdb8ef05054&theme=dark&autoRefresh=true&maxDataAge=60&showTitleAndDesc=false&scalingWidth=fixed&scalingHeight=fixed"
+          src="https://charts.mongodb.com/charts-project-0-mohwveq/embed/dashboards?id=ec44904d-15c5-49e1-9987-6fdb8ef05054&theme=dark&autoRefresh=true&maxDataAge=3600&showTitleAndDesc=false&scalingWidth=fixed&scalingHeight=fixed"
         />
       </Box>
 
@@ -134,7 +134,7 @@ const Dashboard = () => {
               width: "100%",
               height: "55vh", // Increased height for a bigger appearance
             }}
-            src="https://charts.mongodb.com/charts-project-0-mohwveq/embed/charts?id=1d5bf1dd-e262-4480-804a-a462ba557ac5&maxDataAge=60&theme=dark&autoRefresh=true"
+            src="https://charts.mongodb.com/charts-project-0-mohwveq/embed/charts?id=1d5bf1dd-e262-4480-804a-a462ba557ac5&maxDataAge=3600&theme=dark&autoRefresh=true"
           />
           <Typography
             p="0 0.6rem"
