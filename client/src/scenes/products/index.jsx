@@ -76,8 +76,8 @@ const Product = ({
           <Typography>id: {_id}</Typography>
           <Typography>Stock Left: {stock}</Typography>
           <Typography>Brand : {brand}</Typography>
-          <Typography>Shop: {shopName}</Typography>
-          {/*<Typography>
+          {/* <Typography>Shop: {shopName}</Typography>
+          <Typography>
             Yearly Sales This Year: {stat[0].yearlySalesTotal}
           </Typography>
           <Typography>
@@ -122,7 +122,7 @@ const Products = () => {
               stock,
               stat,
               brand,
-              shopName,
+              //shopName,
             }) => (
               <Product
                 key={_id}
@@ -135,7 +135,7 @@ const Products = () => {
                 stock={stock}
                 stat={stat}
                 brand={brand}
-                shopName={shopName}
+                //shopName={shopName}
               />
             )
           )}

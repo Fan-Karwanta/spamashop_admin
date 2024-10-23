@@ -24,3 +24,4 @@ const Breakdown = () => {
 };
 
 export default Breakdown;
+// october 15 2024 if you will push the repo here you will have all the charts in 1 hr syncing. to save data usage from charts
