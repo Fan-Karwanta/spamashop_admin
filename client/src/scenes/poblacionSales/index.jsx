@@ -22,7 +22,7 @@ const Breakdown = () => {
           }}
           width="100%" // Adjust the width to be responsive
           height="100%" // Adjust the height to occupy the full container
-          src="https://charts.mongodb.com/charts-project-0-mohwveq/embed/charts?id=6565b04a-b63c-4e20-b728-d2c6dc89d3be&maxDataAge=3600&theme=dark&autoRefresh=true"
+          src="https://charts.mongodb.com/charts-project-0-mohwveq/embed/charts?id=6565b04a-b63c-4e20-b728-d2c6dc89d3be&maxDataAge=60&theme=dark&autoRefresh=true"
           allowFullScreen
         ></iframe>
       </Box>
