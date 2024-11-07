@@ -16,7 +16,7 @@ const Breakdown = () => {
             width: "100%", // Set to full width for responsiveness
             height: "100%", // Set to fill the container height
           }}
-          src="https://charts.mongodb.com/charts-project-0-mohwveq/embed/charts?id=1d5bf1dd-e262-4480-804a-a462ba557ac5&maxDataAge=3600&theme=dark&autoRefresh=true"
+          src="https://charts.mongodb.com/charts-project-0-mohwveq/embed/charts?id=1d5bf1dd-e262-4480-804a-a462ba557ac5&maxDataAge=60&theme=dark&autoRefresh=true"
         ></iframe>
       </Box>
     </Box>
